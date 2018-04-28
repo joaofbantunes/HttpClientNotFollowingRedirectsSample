@@ -19,9 +19,9 @@ namespace CodingMilitia.HttpClientNotFollowingRedirectsSample.Web.Controllers
             _logger = logger;
         }
 
-        //To test redirects use http://localhost:5000/api/sample/thing?trackingUrl=http%3A%2F%2Fhttpstat.us%2F302
-        //To test no redirects use http://localhost:5000/api/sample/thing?trackingUrl=http%3A%2F%2Fhttpstat.us%2F200
-        [Route("thing")]
+        //To test redirects use http://localhost:5000/api/sample/track?trackingUrl=http%3A%2F%2Fhttpstat.us%2F302
+        //To test no redirects use http://localhost:5000/api/sample/track?trackingUrl=http%3A%2F%2Fhttpstat.us%2F200
+        [Route("track")]
         public async Task<IActionResult> TrackAsync(string trackingUrl, CancellationToken ct)
         {
             var targetUrl = await _tracker.TrackAsync(trackingUrl, ct);
